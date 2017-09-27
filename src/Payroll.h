@@ -1,7 +1,6 @@
 #pragma once
 #ifndef _PAYROLL_H_INCLUDED
 #define _PAYROLL_H_INCLUDED
-#include "stdafx.h"
 #include <iostream>
 #include <string>
 #include <sstream>
