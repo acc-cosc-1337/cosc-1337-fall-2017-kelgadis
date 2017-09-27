@@ -28,3 +28,7 @@ TEST(payrollTest, isInRange_when_sent_number_out_of_range){
 TEST(payrollTest, getOTPay_when_otHours_greater_than_zero){
     EXPECT_EQ(200.0, getOTPay(20.0, 10.0));
 }
+
+TEST(payrollTest, getOTPay_when_otHours_equal_to_zero) {
+    EXPECT_EQ(0.0, getOTPay(20.0, 0.0));
+}
