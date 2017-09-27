@@ -20,3 +20,7 @@ TEST(payrollTest, makeNumber_when_sent_string_of_numbers_only){
 TEST(payrollTest, isInRange_when_sent_number_in_range){
     EXPECT_EQ(50.0, isInRange(50.0, 0.0, 60.0));
 }
+
+TEST(payrollTest, isInRange_when_sent_number_out_of_range){
+    EXPECT_EQ(-1.0, isInRange(100.0, 0.0, 60.0));
+}
