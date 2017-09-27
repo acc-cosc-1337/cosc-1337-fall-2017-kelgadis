@@ -17,3 +17,6 @@ TEST(payrollTest, makeNumber_when_sent_string_of_numbers_only){
     EXPECT_EQ(12345.0, makeNumber("12345"));
 }
 
+TEST(payrollTest, isInRange_when_sent_number_in_range){
+    EXPECT_EQ(50.0, isInRange(50.0, 0.0, 60.0));
+}
