@@ -1,36 +1,30 @@
-#ifndef _PAYROLL_H
-#define _PAYROLL_H
-
+#pragma once
+#ifndef _PAYROLL_H_INCLUDED
+#define _PAYROLL_H_INCLUDED
+#include "stdafx.h"
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <iomanip>
-#include <cctype>
+
 using namespace std;
 
-bool isNumber(double input);
-bool isInRange(double input, double range1, double range2);
-bool isLetter(string input);
-string getEmployeeName(int employee);
-string getEmployeeType();
-double getRegularHours();
+void printErrorMessage(string option, double range1, double range2);
+double makeNumber(string userInput);
+int getEmployeeType(string userInput, char letter1, char letter2);
+double isInRange(double input, double range1, double range2);
 double getOTHours(double hours);
-double getPayRate();
-double getOTPayRate();
 double getOTPay(double otHours, double otPayRate);
-double getRegularPay(string employee, double hours, double payRate);
-double getRegularPay(string employee);
+double getRegularPay(double hours, double payRate);
 double getGrossPay(double regularPay, double otPay); // hourly
 double getGrossPay(double regularPay); // salary
 double getFIT(double grossPay);
 double getFICASSN(double grossPay);
 double getFICAMED(double grossPay);
 double getNetPay(double grossPay, double fedIncomeTax, double ficaSSN, double ficaMED);
-string printHeaderLine();
+string printTitleBar();
 string printLineOfDashes(char position);
-string addDollarSign(double input);
-string storePayrollHourly(string employee, string fullName, double hours, double otHours, double payRate, double otRate, double regularPay,
-					double otPay, double grossPay, double ficaSSN, double ficaMED, double fedIncomeTax, double netPay);
-string storePayrollSalary(string employee, string fullName, double regularPay, double grossPay, double ficaSSN, double ficaMED, double fedIncomeTax, double netPay);
+void printEmployeeData(int employee, string fullName, double hours, double otHours, double payRate, double otRate, double regularPay,
+					   double otPay, double grossPay, double ficaSSN, double ficaMED, double fedIncomeTax, double netPay);
 
-#endif
+#endif // _PAYROLL_H_INCLUDED
